@@ -26,7 +26,7 @@ def start():
     return "ok"
 
 @app.post("/move")
-def move(request):
+def move(request: dict):
     print(request)
     i = random.randint(0, 3)
     directions = ["up", "down", "left", "right"]
