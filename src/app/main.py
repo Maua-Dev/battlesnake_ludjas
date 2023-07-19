@@ -20,19 +20,20 @@ def info():
         "version": "1.0.0"
     }
 
+@app.post("/start") 
+def start():
+    return "ok"
 
-@app.get("/items/{item_id}")
-def read_item(item_id: int):
-    return {"item_id": item_id}
+@app.post("/move")
+def move():
+    return {
+        "move": "up",
+        "shout": "I'm moving up!"
+    }
 
-
-@app.post("/create_item")
-def create_item(request: dict):
-    item_id = request.get("item_id")
-    name = request.get("name")
-
-    return {"item_id": item_id,
-            "name": name}
+@app.post("/end")
+def end():
+    return "ok"
 
 
 handler = Mangum(app, lifespan="off")
