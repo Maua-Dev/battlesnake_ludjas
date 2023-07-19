@@ -1,3 +1,4 @@
+import random
 from fastapi import FastAPI
 from mangum import Mangum
 
@@ -26,10 +27,13 @@ def start():
 
 @app.post("/move")
 def move():
-    return {
-        "move": "up",
-        "shout": "I'm moving up!"
+    i = random.randint(0, 3)
+    directions = ["up", "down", "left", "right"]
+    response = {
+        "move": directions[i],
+        "shout": f"I'm moving {directions[i]}!"
     }
+    return response
 
 @app.post("/end")
 def end():
