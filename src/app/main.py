@@ -26,7 +26,8 @@ def start():
     return "ok"
 
 @app.post("/move")
-def move():
+def move(request):
+    print(request)
     i = random.randint(0, 3)
     directions = ["up", "down", "left", "right"]
     response = {
