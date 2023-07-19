@@ -1,5 +1,4 @@
-from src.app.main import create_item, read_item, info
-
+from src.app.main import info, start, move, end
 
 class Test_App:
     def test_info(self):
@@ -13,18 +12,3 @@ class Test_App:
             "tail": "hook",
             "version": "1.0.0"
         }
-
-    def test_get_item(self):
-
-        resp = read_item(1)
-
-        assert resp == {"item_id": 1}
-
-    def test_post_item(self):
-        request = {"item_id": 1,
-                   "name": "test"}
-
-        resp = create_item(request)
-
-        assert resp == {"item_id": 1,
-                        "name": "test"}
