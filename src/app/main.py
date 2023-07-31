@@ -11,10 +11,10 @@ app = FastAPI()
 
 
 @app.get("/")
-def info():
+def read_root():
     return {
         "apiversion": "1",
-        "author": "LuigiTrevisan",
+        "author": "Maua-Dev",
         "color": "#8B0000",
         "head": "tiger-king",
         "tail": "hook",
